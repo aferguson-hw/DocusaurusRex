@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: BillingApi
+  description: An API for Billing stuff
+  version: v1
+paths:
+  /Billing/PayBill:
+    post:
+      tags:
+        - Billing
+      summary: Pay a bill.. cuz bills need to be paid ya know?
+      description: "Sample Request\r\nPOST /Billing/PayBill\r\n{\r\n    \"firstName\": \"Joe\",\r\n    \"lastName\": \"Schmoe\",\r\n    \"amount\": 50.00,\r\n    \"accountNumber\": 12345\r\n}"
+      requestBody:
+        description: Payment info for the payment
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentInformationDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentInformationDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PaymentInformationDto'
+      responses:
+        '200':
+          description: A successful payment was made
+        '500':
+          description: The payment that was attempted failed
+components:
+  schemas:
+    PaymentInformationDto:
+      type: object
+      properties:
+        firstName:
+          type: string
+          nullable: true
+        lastName:
+          type: string
+          nullable: true
+        amount:
+          type: number
+          format: double
+        accountNumber:
+          type: integer
+          format: int32
+      additionalProperties: false
