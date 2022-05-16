@@ -1,0 +1,78 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Triage API"
+    },
+    "host": "localhost:63701",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/topics": {
+            "get": {
+                "tags": [
+                    "Topics"
+                ],
+                "operationId": "GetTopics",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/encounter": {
+            "post": {
+                "tags": [
+                    "Encounter"
+                ],
+                "operationId": "CreateEncounter",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Encounter"
+                ],
+                "operationId": "UpdateEncounter",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "encounterId",
+                        "in": "path",
+                        "required": true 
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

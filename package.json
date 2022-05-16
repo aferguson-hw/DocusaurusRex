@@ -21,7 +21,8 @@
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "redocusaurus": "^1.0.0"
+    "redocusaurus": "^1.0.2",
+    "rich-markdown-editor": "^11.21.3"
   },
   "browserslist": {
     "production": [

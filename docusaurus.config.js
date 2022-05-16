@@ -4,28 +4,9 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-function GetOpenApiSpecs() {
-  // Could be me call to fetch our OpenAPI specs to include them here
-  // with the route we would want to use
-  return [
-    {
-      spec: 'docs/API/Specifications/billingapi.yaml',
-      route: 'docs/API/BillingApi'
-    },
-    {
-      spec: 'docs/API/Specifications/customerapi.yaml',
-      route: 'docs/API/CustomerApi'
-    },
-    {
-      spec: 'https://platform.test.hwapps.net/provisioning/swagger/v1/swagger.json',
-      route: 'docs/API/ProvisioningApi'
-    }
-  ]
-}
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Developer Portal',
+  title: 'Healthwise',
   tagline: 'Find what you need by clicking the button below',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -42,15 +23,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/'
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -59,19 +34,61 @@ const config = {
     [
       'redocusaurus',
       {
-        specs: GetOpenApiSpecs(),
+        specs: [
+          {
+            route: 'api/authorization/spec',
+            spec: './docs/specs/auth.json'
+          },
+          {
+            route: 'api/content/spec',
+            spec: './docs/specs/content.json'
+          },
+          {
+            route: 'api/search/spec',
+            spec: './docs/specs/search.json'
+          },
+          {
+            route: 'api/taxonomy/spec',
+            spec: './docs/specs/taxonomy.json'
+          },
+          {
+            route: 'api/triage/spec',
+            spec: './docs/specs/triage.json'
+          }
+        ],
+        theme: {
+          primaryColor: '#006272',
+          // The redoc options object
+          options: {
+            disableSearch: true,
+            hideDownloadButton: true
+          },
+          // Redoc theme options
+          theme: {
+            sidebar: {
+              width: '260px',
+              backgroundColor: '#fafafa',
+              textColor: '#006272'
+            }
+          }
+        }
       }
-    ],
+    ]
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      //Get rid of the light/dark mode toggle in the navbar
+      colorMode: {
+        disableSwitch: true
+      },
+      // Make the sidebar collapsible
+      hideableSidebar: true,
       navbar: {
-        title: 'Portal',
+        title: '',
         style: 'primary',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Healthwise Logo',
           src: 'img/healthwise-logo-white.svg',
         },
         items: [
@@ -79,59 +96,19 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'API Documentation',
+            label: 'Documentation'
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'doc',
+            docId: 'api',
+            position: 'left',
+            label: 'API Reference',
+          },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        copyright: `©1996-${new Date().getFullYear()} Healthwise, Incorporated. Healthwise, Healthwise for every health decision, and the Healthwise logo are trademarks of Healthwise, Incorporated.`,
       },
     }),
 };

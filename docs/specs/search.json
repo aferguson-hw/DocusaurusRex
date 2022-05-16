@@ -1,0 +1,798 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Search API"
+    },
+    "host": "localhost:63701",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/v1/code": {
+            "get": {
+                "tags": [
+                    "Code"
+                ],
+                "operationId": "Code",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facet_field",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/code": {
+            "get": {
+                "tags": [
+                    "Code"
+                ],
+                "operationId": "CodeV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facet_field",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/search": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "operationId": "Search",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "num_concepts",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facet_field",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "showLearningCenters",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/customsearch": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "operationId": "CustomSearch",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "num_concepts",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facet_field",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "showLearningCenters",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/search": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "operationId": "SearchV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "num_concepts",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facet_field",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "showLearningCenters",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customcode/articles": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "operationId": "SearchArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/intra/concept": {
+            "get": {
+                "tags": [
+                    "Intra"
+                ],
+                "operationId": "GetConceptArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "conceptId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/intra/taxi": {
+            "get": {
+                "tags": [
+                    "Intra"
+                ],
+                "operationId": "GetTaxonomyIndex",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/intra/squrl/{handler}": {
+            "get": {
+                "tags": [
+                    "Intra"
+                ],
+                "operationId": "GetSolrResults",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "handler",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/semantic": {
+            "get": {
+                "tags": [
+                    "Semantic"
+                ],
+                "operationId": "GetEntitiesResults",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/cb": {
+            "get": {
+                "tags": [
+                    "Topics"
+                ],
+                "operationId": "Search",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "skip",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "facets",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/autocompletes": {
+            "get": {
+                "tags": [
+                    "TypeAhead"
+                ],
+                "operationId": "AutocompleteConcepts",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/suggestions": {
+            "get": {
+                "tags": [
+                    "TypeAhead"
+                ],
+                "operationId": "Suggestions",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v3/suggestions": {
+            "get": {
+                "tags": [
+                    "TypeAhead"
+                ],
+                "operationId": "SuggestionsV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "top",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "feature",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/coach/ahead": {
+            "get": {
+                "tags": [
+                    "TypeAhead"
+                ],
+                "operationId": "CoachTypeAhead",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "gender",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "age",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "topKeywords",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "topArticles",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

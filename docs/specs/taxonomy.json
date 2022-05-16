@@ -1,0 +1,322 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Taxonomy API"
+    },
+    "host": "localhost:63701",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/index": {
+            "get": {
+                "tags": [
+                    "Index"
+                ],
+                "operationId": "GetIndexAz",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "depth",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "beginsWith",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/index/{root}": {
+            "get": {
+                "tags": [
+                    "Index"
+                ],
+                "operationId": "GetIndexV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "root",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "depth",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/index/{root}": {
+            "get": {
+                "tags": [
+                    "Index"
+                ],
+                "operationId": "GetIndex",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "root",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "depth",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "concepts": {
+            "get": {
+                "tags": [
+                    "Concepts"
+                ],
+                "operationId": "ListConceptsV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/concepts": {
+            "get": {
+                "tags": [
+                    "Concepts"
+                ],
+                "operationId": "ListConcepts",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/concepts/{id}": {
+            "get": {
+                "tags": [
+                    "Concepts"
+                ],
+                "operationId": "GetConceptV3",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/concepts/{id}": {
+            "get": {
+                "tags": [
+                    "Concepts"
+                ],
+                "operationId": "GetConcept",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "fq",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/specialties": {
+            "get": {
+                "tags": [
+                    "Specialties"
+                ],
+                "operationId": "GetSpecialties",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "licensedOnly",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/specialties/{conceptId}": {
+            "get": {
+                "tags": [
+                    "Specialties"
+                ],
+                "operationId": "GetSpecialtiesByConceptId",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "conceptId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "content",
+                        "in": "path",
+                        "required": false
+                    },
+                    {
+                        "name": "licensedOnly",
+                        "in": "path",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,3825 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Content API"
+    },
+    "host": "localhost:56263",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/articles/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticle",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "includePageHtml",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startsWith",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contains",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "unedited",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "hw.key",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "allJsInline",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_UpdateEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_CreateEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_DeleteEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/content/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticle",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "includePageHtml",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startsWith",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contains",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "unedited",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "hw.key",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "allJsInline",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/articles/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticle",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "includePageHtml",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startsWith",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contains",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "unedited",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "hw.key",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "allJsInline",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_UpdateEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_CreateEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_DeleteEditedContent",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/content/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticle",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "editId",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "includePageHtml",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startsWith",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contains",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "unedited",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "hw.key",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "allJsInline",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/contentSummaries": {
+            "post": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetContentSummary",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContentSummaryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/articles/{id}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/articles/{id}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/articles": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/articles": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetArticles",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/articles/esdp": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetESDP",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/articles/esdp": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetESDP",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/inventory": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "operationId": "Articles_GetInventory",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "changeStatus",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/ecode": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetEcode",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/ecode": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetEcode",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/origins": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetEcode",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_AddOrigin",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_DeleteOrigin",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/origins": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetEcode",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_AddOrigin",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_DeleteOrigin",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/oembed": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetOembed",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxwidth",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxheight",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "useMediaService",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JsonResult[Oembed]"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/oembed": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetOembed",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxwidth",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxheight",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "useMediaService",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JsonResult[Oembed]"
+                        }
+                    }
+                }
+            }
+        },
+        "/embed": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetEmbedWithOauth",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxwidth",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "maxheight",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "useMediaService",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JsonResult[Oembed]"
+                        }
+                    }
+                }
+            }
+        },
+        "/oembedhealth": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetOembedHealth",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JsonResult[Oembed]"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/oembedhealth": {
+            "get": {
+                "tags": [
+                    "Embed"
+                ],
+                "operationId": "Embed_GetOembedHealth",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JsonResult[Oembed]"
+                        }
+                    }
+                }
+            }
+        },
+        "/health": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "operationId": "HealthCheck_Check",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/health/{id}": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "operationId": "HealthCheck_Check",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/health/plain": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "operationId": "HealthCheck_Plain",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/health/soft": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "operationId": "HealthCheck_Soft",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/health/pulse": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "operationId": "HealthCheck_Pulse",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/info": {
+            "get": {
+                "tags": [
+                    "Info"
+                ],
+                "operationId": "Info_GetInfo",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/custominventory": {
+            "get": {
+                "tags": [
+                    "Inventory"
+                ],
+                "operationId": "Inventory_GetInventory",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "select",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customlist": {
+            "get": {
+                "tags": [
+                    "List"
+                ],
+                "operationId": "List_GetList",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startsWith",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAudience",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/metadata/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Metadata"
+                ],
+                "operationId": "Metadata_GetMetadata",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/metadata/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Metadata"
+                ],
+                "operationId": "Metadata_GetMetadata",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentVersion",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asOf",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/resources/{version}/{lang}/{id}": {
+            "get": {
+                "tags": [
+                    "Resources"
+                ],
+                "operationId": "Resources_GetResources",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "client",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/resources/{version}/{lang}/{id}": {
+            "get": {
+                "tags": [
+                    "Resources"
+                ],
+                "operationId": "Resources_GetResources",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "client",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/caption/{version}/{lang}/{id}": {
+            "get": {
+                "tags": [
+                    "Resources"
+                ],
+                "operationId": "Resources_GetCaptionFile",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/caption/{version}/{lang}/{id}": {
+            "get": {
+                "tags": [
+                    "Resources"
+                ],
+                "operationId": "Resources_GetCaptionFile",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/scripts/{scriptname}": {
+            "get": {
+                "tags": [
+                    "Scripts"
+                ],
+                "operationId": "Scripts_Js",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "scriptname",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentType",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/scripts/{scriptname}": {
+            "get": {
+                "tags": [
+                    "Scripts"
+                ],
+                "operationId": "Scripts_Js",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "scriptname",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentType",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/spec": {
+            "get": {
+                "tags": [
+                    "Spec"
+                ],
+                "operationId": "Spec_GetSpec",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/spec": {
+            "get": {
+                "tags": [
+                    "Spec"
+                ],
+                "operationId": "Spec_GetSpec",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/spec/{schema}": {
+            "get": {
+                "tags": [
+                    "Spec"
+                ],
+                "operationId": "Spec_GetSpecSchema",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "schema",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/spec/{schema}": {
+            "get": {
+                "tags": [
+                    "Spec"
+                ],
+                "operationId": "Spec_GetSpecSchema",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "schema",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentDigest",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentDigest",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/find": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByIdAndLangListsTask",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hwid",
+                        "in": "query",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/find": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByIdAndLangListsTask",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hwid",
+                        "in": "query",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByIdAndLang",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/{id}/{lang}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByIdAndLang",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contentOutput",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{id}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentById",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/{id}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentById",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{concept}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConcept",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllSets",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/{concept}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConcept",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllSets",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{concept}/{aspect}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConceptAspect",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "aspect",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllSets",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/{concept}/{aspect}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConceptAspect",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "aspect",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllSets",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/topics/{concept}/{aspect}/{lang}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConceptAspectAndLang",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "aspect",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllTopics",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/topics/{concept}/{aspect}/{lang}": {
+            "get": {
+                "tags": [
+                    "Structured"
+                ],
+                "operationId": "Structured_GetStructuredContentByConceptAspectAndLang",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "concept",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "aspect",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "showAllVisibility",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "showAllTopics",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/videos": {
+            "get": {
+                "tags": [
+                    "Video"
+                ],
+                "operationId": "Video_Index",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "localization",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ContentSummaryRequest": {
+            "type": "object",
+            "properties": {
+                "Hrefs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "JsonResult[Oembed]": {
+            "type": "object",
+            "properties": {
+                "Content": {
+                    "$ref": "#/definitions/Oembed",
+                    "readOnly": true
+                },
+                "SerializerSettings": {
+                    "$ref": "#/definitions/JsonSerializerSettings",
+                    "readOnly": true
+                },
+                "Encoding": {
+                    "$ref": "#/definitions/Encoding",
+                    "readOnly": true
+                },
+                "Request": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "Oembed": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "author_name": {
+                    "type": "string"
+                },
+                "author_url": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "provider_url": {
+                    "type": "string"
+                },
+                "cache_age": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "thumbnail_width": {
+                    "type": "string"
+                },
+                "thumbnail_height": {
+                    "type": "string"
+                },
+                "html": {
+                    "type": "string"
+                },
+                "width": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "string"
+                },
+                "e_code": {
+                    "type": "string"
+                },
+                "from": {
+                    "type": "string"
+                },
+                "clientToken": {
+                    "type": "string"
+                },
+                "mediaService": {
+                    "type": "string"
+                }
+            }
+        },
+        "JsonSerializerSettings": {
+            "type": "object",
+            "properties": {
+                "ReferenceLoopHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "MissingMemberHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "ObjectCreationHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "NullValueHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "DefaultValueHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "type": "integer"
+                },
+                "Converters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/JsonConverter"
+                    }
+                },
+                "PreserveReferencesHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "type": "integer"
+                },
+                "TypeNameHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "type": "integer"
+                },
+                "MetadataPropertyHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "TypeNameAssemblyFormat": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "TypeNameAssemblyFormatHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "ConstructorHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "ContractResolver": {
+                    "$ref": "#/definitions/IContractResolver"
+                },
+                "EqualityComparer": {
+                    "$ref": "#/definitions/IEqualityComparer"
+                },
+                "ReferenceResolver": {
+                    "$ref": "#/definitions/IReferenceResolver"
+                },
+                "ReferenceResolverProvider": {
+                    "$ref": "#/definitions/Func[IReferenceResolver]"
+                },
+                "TraceWriter": {
+                    "$ref": "#/definitions/ITraceWriter"
+                },
+                "Binder": {
+                    "$ref": "#/definitions/SerializationBinder"
+                },
+                "SerializationBinder": {
+                    "$ref": "#/definitions/ISerializationBinder"
+                },
+                "Error": {
+                    "type": "object"
+                },
+                "Context": {
+                    "$ref": "#/definitions/StreamingContext"
+                },
+                "DateFormatString": {
+                    "type": "string"
+                },
+                "MaxDepth": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Formatting": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "DateFormatHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "DateTimeZoneHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "type": "integer"
+                },
+                "DateParseHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "FloatFormatHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "FloatParseHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "StringEscapeHandling": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "type": "integer"
+                },
+                "Culture": {
+                    "type": "string"
+                },
+                "CheckAdditionalContent": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Encoding": {
+            "type": "object",
+            "properties": {
+                "BodyName": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "EncodingName": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "HeaderName": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "WebName": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "WindowsCodePage": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "IsBrowserDisplay": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsBrowserSave": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsMailNewsDisplay": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsMailNewsSave": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSingleByte": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "EncoderFallback": {
+                    "$ref": "#/definitions/EncoderFallback"
+                },
+                "DecoderFallback": {
+                    "$ref": "#/definitions/DecoderFallback"
+                },
+                "IsReadOnly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "CodePage": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        },
+        "JsonConverter": {
+            "type": "object",
+            "properties": {
+                "CanRead": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "CanWrite": {
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            }
+        },
+        "IContractResolver": {
+            "type": "object",
+            "properties": {}
+        },
+        "IEqualityComparer": {
+            "type": "object",
+            "properties": {}
+        },
+        "IReferenceResolver": {
+            "type": "object",
+            "properties": {}
+        },
+        "Func[IReferenceResolver]": {
+            "type": "object",
+            "properties": {
+                "Method": {
+                    "$ref": "#/definitions/MethodInfo",
+                    "readOnly": true
+                },
+                "Target": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "ITraceWriter": {
+            "type": "object",
+            "properties": {
+                "LevelFilter": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        },
+        "SerializationBinder": {
+            "type": "object",
+            "properties": {}
+        },
+        "ISerializationBinder": {
+            "type": "object",
+            "properties": {}
+        },
+        "StreamingContext": {
+            "type": "object",
+            "properties": {
+                "Context": {
+                    "type": "object",
+                    "readOnly": true
+                },
+                "State": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        255
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        },
+        "EncoderFallback": {
+            "type": "object",
+            "properties": {
+                "MaxCharCount": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        },
+        "DecoderFallback": {
+            "type": "object",
+            "properties": {
+                "MaxCharCount": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        },
+        "MethodInfo": {
+            "type": "object",
+            "properties": {
+                "MemberType": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        191
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "ReturnType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "ReturnParameter": {
+                    "$ref": "#/definitions/ParameterInfo",
+                    "readOnly": true
+                },
+                "ReturnTypeCustomAttributes": {
+                    "$ref": "#/definitions/ICustomAttributeProvider",
+                    "readOnly": true
+                },
+                "MethodImplementationFlags": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        0,
+                        1,
+                        2,
+                        3,
+                        3,
+                        4,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        1024,
+                        4096,
+                        65535
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "MethodHandle": {
+                    "type": "object",
+                    "readOnly": true
+                },
+                "Attributes": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        256,
+                        512,
+                        1024,
+                        2048,
+                        4096,
+                        8192,
+                        16384,
+                        32768,
+                        53248
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "CallingConvention": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        32,
+                        64
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "IsGenericMethodDefinition": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "ContainsGenericParameters": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsGenericMethod": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecurityCritical": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecuritySafeCritical": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecurityTransparent": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsPublic": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsPrivate": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamily": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamilyAndAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamilyOrAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsStatic": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFinal": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsVirtual": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsHideBySig": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsAbstract": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSpecialName": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsConstructor": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "Name": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "DeclaringType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "ReflectedType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "CustomAttributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeData"
+                    },
+                    "readOnly": true
+                },
+                "MetadataToken": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Module": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "ParameterInfo": {
+            "type": "object",
+            "properties": {
+                "ParameterType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "Name": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "HasDefaultValue": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "DefaultValue": {
+                    "type": "object",
+                    "readOnly": true
+                },
+                "RawDefaultValue": {
+                    "type": "object",
+                    "readOnly": true
+                },
+                "Position": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Attributes": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        4096,
+                        8192,
+                        16384,
+                        32768,
+                        61440
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Member": {
+                    "$ref": "#/definitions/MemberInfo",
+                    "readOnly": true
+                },
+                "IsIn": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsOut": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsLcid": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsRetval": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsOptional": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "MetadataToken": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "CustomAttributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeData"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "ICustomAttributeProvider": {
+            "type": "object",
+            "properties": {}
+        },
+        "CustomAttributeData": {
+            "type": "object",
+            "properties": {
+                "AttributeType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "Constructor": {
+                    "$ref": "#/definitions/ConstructorInfo",
+                    "readOnly": true
+                },
+                "ConstructorArguments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeTypedArgument"
+                    },
+                    "readOnly": true
+                },
+                "NamedArguments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeNamedArgument"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "MemberInfo": {
+            "type": "object",
+            "properties": {
+                "MemberType": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        191
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Name": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "DeclaringType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "ReflectedType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "CustomAttributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeData"
+                    },
+                    "readOnly": true
+                },
+                "MetadataToken": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Module": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "ConstructorInfo": {
+            "type": "object",
+            "properties": {
+                "MemberType": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        191
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "MethodImplementationFlags": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        0,
+                        1,
+                        2,
+                        3,
+                        3,
+                        4,
+                        4,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        1024,
+                        4096,
+                        65535
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "MethodHandle": {
+                    "type": "object",
+                    "readOnly": true
+                },
+                "Attributes": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        16,
+                        32,
+                        64,
+                        128,
+                        256,
+                        256,
+                        512,
+                        1024,
+                        2048,
+                        4096,
+                        8192,
+                        16384,
+                        32768,
+                        53248
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "CallingConvention": {
+                    "format": "int32",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        32,
+                        64
+                    ],
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "IsGenericMethodDefinition": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "ContainsGenericParameters": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsGenericMethod": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecurityCritical": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecuritySafeCritical": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSecurityTransparent": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsPublic": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsPrivate": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamily": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamilyAndAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFamilyOrAssembly": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsStatic": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsFinal": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsVirtual": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsHideBySig": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsAbstract": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsSpecialName": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "IsConstructor": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "Name": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "DeclaringType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "ReflectedType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "CustomAttributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomAttributeData"
+                    },
+                    "readOnly": true
+                },
+                "MetadataToken": {
+                    "format": "int32",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "Module": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "CustomAttributeTypedArgument": {
+            "type": "object",
+            "properties": {
+                "ArgumentType": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "Value": {
+                    "type": "object",
+                    "readOnly": true
+                }
+            }
+        },
+        "CustomAttributeNamedArgument": {
+            "type": "object",
+            "properties": {
+                "MemberInfo": {
+                    "$ref": "#/definitions/MemberInfo",
+                    "readOnly": true
+                },
+                "TypedValue": {
+                    "$ref": "#/definitions/CustomAttributeTypedArgument",
+                    "readOnly": true
+                },
+                "MemberName": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "IsField": {
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            }
+        }
+    }
+}
