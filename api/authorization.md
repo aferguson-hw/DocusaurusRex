@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Authorization API
-slug: /api/authorization
+slug: authorization
 ---
 
 :::info

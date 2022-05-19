@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: Search API
-slug: /api/search
+slug: search
 ---
 
 :::info

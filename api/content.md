@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Content API
-slug: /api/content
+slug: content
 ---
 
 :::info

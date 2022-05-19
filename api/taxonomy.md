@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Taxonomy API
-slug: /api/taxonomy
+slug: taxonomy
 ---
 
 :::info

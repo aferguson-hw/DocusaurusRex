@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: Triage API
-slug: /api/triage
+slug: triage
 ---
 
 :::info

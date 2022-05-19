@@ -1,9 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Healthwise',
@@ -23,7 +20,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/'
+          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -37,23 +34,23 @@ const config = {
         specs: [
           {
             route: 'api/authorization/spec',
-            spec: './docs/specs/auth.json'
+            spec: './specifications/auth.json'
           },
           {
             route: 'api/content/spec',
-            spec: './docs/specs/content.json'
+            spec: './specifications/content.json'
           },
           {
             route: 'api/search/spec',
-            spec: './docs/specs/search.json'
+            spec: './specifications/search.json'
           },
           {
             route: 'api/taxonomy/spec',
-            spec: './docs/specs/taxonomy.json'
+            spec: './specifications/taxonomy.json'
           },
           {
             route: 'api/triage/spec',
-            spec: './docs/specs/triage.json'
+            spec: './specifications/triage.json'
           }
         ],
         theme: {
@@ -75,6 +72,17 @@ const config = {
       }
     ]
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: './api',
+        routeBasePath: 'api',
+        sidebarPath: require.resolve('./apiSidebar.js'),
+      }
+    ]
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -93,14 +101,14 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to: '/',
+            activeBasePath: 'docs',
             position: 'left',
             label: 'Documentation'
           },
           {
-            type: 'doc',
-            docId: 'api',
+            to: 'api/',
+            activeBasePath: 'api',
             position: 'left',
             label: 'API Reference',
           },
