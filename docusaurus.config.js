@@ -91,7 +91,7 @@ const config = {
         disableSwitch: true
       },
       // Make the sidebar collapsible
-      hideableSidebar: true,
+      hideableSidebar: false,
       navbar: {
         title: '',
         style: 'primary',
@@ -112,6 +112,11 @@ const config = {
             position: 'left',
             label: 'API Reference',
           },
+          {
+            href: '/admin',
+            position: 'right',
+            label: 'Login'
+          }
         ],
       },
       footer: {

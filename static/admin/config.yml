@@ -1,0 +1,22 @@
+backend:
+  name: github
+  branch: main
+  repo: aferguson-hw/DocusaurusRex
+
+media_folder: "static/img"
+public_foler: "/img/"
+
+collections:
+- name: docs
+  label: "Documentation"
+  folder: docs
+  identifier_field: title
+  extension: md
+  widget: "list"
+  create: true
+  slug: "{{slug}}"
+  fields:
+    - { name: title, label: Title, widget: string }
+    - { name: sidebar_position, label: sidebar_position, widget: number }
+    - { name: slug, label: slug, widget: string, required: false }
+    - { name: body, label: Body, widget: markdown }
