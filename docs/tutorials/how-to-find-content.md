@@ -1,5 +1,5 @@
 ---
-sidebar-position: 1
+sidebar_position: 1
 title: Finding Articles & Topics
 slug: /tutorials/finding-content
 ---
