@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Authorization
 ---
 
-The Healthwise APIs and services are secured through the OAuth 2.0 Authorization Framework. The OAuth framework is a widely adopted standard used to controll access to HTTP services.
+The Healthwise APIs and services are secured through the OAuth 2.0 Authorization Framework. The OAuth framework is a widely adopted standard used to control access to HTTP services.
 
 Access to any Healthwise API requires an access token with the appropriate scopes. An access token is requested from the Healthwise [Authorization API](/api/authorization) by the supported OAuth flows. The access tokens issued by the Authorization API follow the JSON Web Token (JWT) standard.
 

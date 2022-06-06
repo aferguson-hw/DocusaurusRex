@@ -51,6 +51,10 @@ const config = {
           {
             route: 'api/triage/spec',
             spec: './specifications/triage.json'
+          },
+          {
+            route: 'api/provisioning/spec',
+            spec: 'https://platform.test.hwapps.net/provisioning/swagger/v1/swagger.json'
           }
         ],
         theme: {
@@ -111,11 +115,6 @@ const config = {
             activeBasePath: 'api',
             position: 'left',
             label: 'API Reference',
-          },
-          {
-            href: '/admin',
-            position: 'right',
-            label: 'Login'
           }
         ],
       },
