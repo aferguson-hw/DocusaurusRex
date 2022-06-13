@@ -146,8 +146,3 @@ Complete the following steps to present content in a modal window
 - Add JavaScript that detects when a user selects a link to a Definition or MultiMedia document type
 - Request the Definition or MultiMedia article from the Content API
 - Use your CSS framework to present the Definition or MultiMedia article in a modal window
-
-## Legal
-Here is an example of how we display the logo, disclaimer, and copyright information on Healthwise pages
-
-![Legal](@site/static/img/legal.png)

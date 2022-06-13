@@ -2,13 +2,73 @@
     "swagger": "2.0",
     "info": {
         "version": "v1",
-        "title": "Content API"
+        "title": "healthwise.content.service",
+        "description": "The Content API provides access to Healthwise content in various forms."
     },
     "host": "localhost:56263",
     "schemes": [
         "http"
     ],
     "paths": {
+        "/changes/articles/details": {
+            "get": {
+                "tags": [
+                    "ArticleChanges"
+                ],
+                "summary": "A cool summary.",
+                "description": "A cool description.",
+                "operationId": "GetArticleChangeDetails",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "changeParameters.changeTypes",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "changeParameters.startDate",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "name": "changeParameters.endDate",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "name": "changeParameters.fromRelease",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "changeParameters.toRelease",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A collection of article content changes.",
+                        "schema": {
+                            "$ref": "#/definitions/ChangeDetailsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The request failed for some reason."
+                    }
+                }
+            }
+        },
         "/articles/{id}/{lang}": {
             "get": {
                 "tags": [
@@ -1297,174 +1357,6 @@
                 }
             }
         },
-        "/oembedhealth": {
-            "get": {
-                "tags": [
-                    "Embed"
-                ],
-                "operationId": "Embed_GetOembedHealth",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/JsonResult[Oembed]"
-                        }
-                    }
-                }
-            }
-        },
-        "/v1/oembedhealth": {
-            "get": {
-                "tags": [
-                    "Embed"
-                ],
-                "operationId": "Embed_GetOembedHealth",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/JsonResult[Oembed]"
-                        }
-                    }
-                }
-            }
-        },
-        "/health": {
-            "get": {
-                "tags": [
-                    "HealthCheck"
-                ],
-                "operationId": "HealthCheck_Check",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "/health/{id}": {
-            "get": {
-                "tags": [
-                    "HealthCheck"
-                ],
-                "operationId": "HealthCheck_Check",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "/health/plain": {
-            "get": {
-                "tags": [
-                    "HealthCheck"
-                ],
-                "operationId": "HealthCheck_Plain",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "/health/soft": {
-            "get": {
-                "tags": [
-                    "HealthCheck"
-                ],
-                "operationId": "HealthCheck_Soft",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "/health/pulse": {
-            "get": {
-                "tags": [
-                    "HealthCheck"
-                ],
-                "operationId": "HealthCheck_Pulse",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
-        "/info": {
-            "get": {
-                "tags": [
-                    "Info"
-                ],
-                "operationId": "Info_GetInfo",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        },
         "/custominventory": {
             "get": {
                 "tags": [
@@ -2719,6 +2611,48 @@
                 }
             }
         },
+        "/changes/topics/details": {
+            "get": {
+                "tags": [
+                    "TopicChanges"
+                ],
+                "operationId": "TopicChanges_GetTopicChangeDetails",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "changeParameters.changeTypes",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "changeParameters.startDate",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "name": "changeParameters.endDate",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/videos": {
             "get": {
                 "tags": [
@@ -2749,6 +2683,102 @@
         }
     },
     "definitions": {
+        "ChangeParametersDto": {
+            "type": "object",
+            "properties": {
+                "ChangeTypes": {
+                    "type": "string"
+                },
+                "StartDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "EndDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "FromRelease": {
+                    "type": "string"
+                },
+                "ToRelease": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChangeDetailsResponse": {
+            "type": "object",
+            "properties": {
+                "Count": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Changes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ContentChange"
+                    }
+                }
+            }
+        },
+        "ContentChange": {
+            "type": "object",
+            "properties": {
+                "Hwid": {
+                    "type": "string"
+                },
+                "Localization": {
+                    "type": "string"
+                },
+                "Versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VersionInfo"
+                    }
+                }
+            }
+        },
+        "VersionInfo": {
+            "type": "object",
+            "properties": {
+                "Product": {
+                    "type": "string"
+                },
+                "Version": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "CreatedDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Changes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ChangeDetails"
+                    }
+                },
+                "CoreVersion": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChangeDetails": {
+            "type": "object",
+            "properties": {
+                "ChangeType": {
+                    "type": "string"
+                },
+                "ChangeText": {
+                    "type": "string"
+                }
+            }
+        },
         "ContentSummaryRequest": {
             "type": "object",
             "properties": {
@@ -3818,6 +3848,22 @@
                 "IsField": {
                     "type": "boolean",
                     "readOnly": true
+                }
+            }
+        },
+        "TopicChangeParametersDto": {
+            "type": "object",
+            "properties": {
+                "ChangeTypes": {
+                    "type": "string"
+                },
+                "StartDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "EndDate": {
+                    "format": "date-time",
+                    "type": "string"
                 }
             }
         }
