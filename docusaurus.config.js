@@ -55,6 +55,10 @@ const config = {
           {
             route: 'api/provisioning/spec',
             spec: 'https://platform.test.hwapps.net/provisioning/swagger/v1/swagger.json'
+          },
+          {
+            route: 'api/link/spec',
+            spec: './specifications/link.json'
           }
         ],
         theme: {

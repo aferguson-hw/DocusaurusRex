@@ -1,0 +1,381 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "healthwise.link.service",
+        "description": "An API for fetching links to various content"
+    },
+    "host": "localhost:8081",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/links": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Gets all available links",
+                "operationId": "GetAllLinks",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view containing a list of all available links",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LinksMap"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid pagination of the request occurred"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Create a new link",
+                "operationId": "CreateLink",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LinkMapPost"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view with the already existing LinksMap for the provided request body info",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "201": {
+                        "description": "Returns a view with the newly created LinksMap",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "400": {
+                        "description": "An exception was thrown and handled during the request process"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1/links": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Gets all available links",
+                "operationId": "GetAllLinks",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view containing a list of all available links",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LinksMap"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid pagination of the request occurred"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Create a new link",
+                "operationId": "CreateLink",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LinkMapPost"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view with the already existing LinksMap for the provided request body info",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "201": {
+                        "description": "Returns a view with the newly created LinksMap",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "400": {
+                        "description": "An exception was thrown and handled during the request process"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/links/{id}": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Gets a link",
+                "operationId": "GetLink",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view containing the LinksMap that was requested with the provided id",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "404": {
+                        "description": "The requested link could not be found"
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Deletes a link",
+                "operationId": "DeleteLink",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The link was successfully deleted"
+                    },
+                    "400": {
+                        "description": "There was an issue deleting the link"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1/links/{id}": {
+            "get": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Gets a link",
+                "operationId": "GetLink",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a view containing the LinksMap that was requested with the provided id",
+                        "schema": {
+                            "$ref": "#/definitions/LinksMap"
+                        }
+                    },
+                    "404": {
+                        "description": "The requested link could not be found"
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Link"
+                ],
+                "description": "Deletes a link",
+                "operationId": "DeleteLink",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The link was successfully deleted"
+                    },
+                    "400": {
+                        "description": "There was an issue deleting the link"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/r/{id}": {
+            "get": {
+                "tags": [
+                    "Redirect"
+                ],
+                "description": "Redirect to the LongUrl for a given link id",
+                "operationId": "RedirectLinkIt",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "302": {
+                        "description": "Redirect to the LongUrl value for the link with provided id"
+                    },
+                    "404": {
+                        "description": "A link could not be found for the provided id"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1/r/{id}": {
+            "get": {
+                "tags": [
+                    "Redirect"
+                ],
+                "description": "Redirect to the LongUrl for a given link id",
+                "operationId": "RedirectLinkIt",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "302": {
+                        "description": "Redirect to the LongUrl value for the link with provided id"
+                    },
+                    "404": {
+                        "description": "A link could not be found for the provided id"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Object": {
+            "type": "object",
+            "properties": {}
+        },
+        "LinkMapPost": {
+            "type": "object",
+            "properties": {
+                "longUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "LinksMap": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "description": "The unique identifier for the Link",
+                    "type": "string"
+                },
+                "ShortUrl": {
+                    "description": "The short form of the url for the Link",
+                    "type": "string"
+                },
+                "LongUrl": {
+                    "description": "The long form of the url for the Link",
+                    "type": "string"
+                },
+                "IsNew": {
+                    "description": "Signifies whether or not the Link is new",
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
