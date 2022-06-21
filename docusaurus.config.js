@@ -58,7 +58,7 @@ const config = {
           },
           {
             route: 'api/link/spec',
-            spec: './specifications/link.json'
+            spec: 'https://link.test.hwapps.net/swagger/docs/v1'
           }
         ],
         theme: {
